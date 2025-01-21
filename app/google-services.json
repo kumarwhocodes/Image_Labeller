@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "794236606908",
+    "project_id": "imagelabeller-10d8c",
+    "storage_bucket": "imagelabeller-10d8c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794236606908:android:441cb68e166916a863f3b9",
+        "android_client_info": {
+          "package_name": "com.kumar.imagelabeller"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiacdbFUjKSkWEbHnGeGMgtO8_9rv_h8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
