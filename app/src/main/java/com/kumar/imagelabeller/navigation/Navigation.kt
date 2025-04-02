@@ -6,7 +6,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.kumar.imagelabeller.screens.BankingScreen
+import com.kumar.imagelabeller.screens.CallScreen
+import com.kumar.imagelabeller.screens.GPSSpeechScreen
 import com.kumar.imagelabeller.screens.ImageLabelScreen
+import com.kumar.imagelabeller.screens.MoreFeaturesScreen
+import com.kumar.imagelabeller.screens.RestaurantScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -21,16 +26,19 @@ fun MainNavGraph(
             ImageLabelScreen()
         }
         composable(route = Screen.CallScreen.route) {
-
+            CallScreen(navController)
         }
         composable(route = Screen.GPSSpeechScreen.route) {
-
+            GPSSpeechScreen(navController)
         }
         composable(route = Screen.BankingScreen.route) {
-
+            BankingScreen(navController)
         }
         composable(route = Screen.RestaurantScreen.route) {
-
+            RestaurantScreen(navController)
+        }
+        composable(route = Screen.MoreFeatures.route) {
+            MoreFeaturesScreen(navController)
         }
     }
 }

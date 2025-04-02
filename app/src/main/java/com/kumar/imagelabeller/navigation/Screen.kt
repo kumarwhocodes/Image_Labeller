@@ -12,4 +12,5 @@ sealed class Screen(val route: String) {
 
     data object CallScreen : Screen(route = "call")
 
+    data object MoreFeatures: Screen(route = "more")
 }

@@ -116,6 +116,12 @@ dependencies {
     //coil
     implementation("io.coil-kt:coil-compose:2.5.0")
 
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    implementation("androidx.datastore:datastore-preferences:1.1.2")
+
     implementation (libs.androidx.material.icons.extended)
 }
 

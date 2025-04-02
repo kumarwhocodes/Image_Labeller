@@ -7,11 +7,15 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
 import androidx.navigation.compose.rememberNavController
+import com.kumar.imagelabeller.navigation.BottomNavBar
+import com.kumar.imagelabeller.navigation.BottomNavOptions
 import com.kumar.imagelabeller.navigation.MainNavGraph
 import com.kumar.imagelabeller.ui.theme.ImageLabellerTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -43,13 +47,25 @@ class MainActivity : ComponentActivity() {
 
     private fun startApp() {
         setContent {
-            ImageLabellerTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    val navController = rememberNavController()
-                    MainNavGraph(navController = navController)
+            ImageLabellerTheme(dynamicColor = true) {
+                val navController = rememberNavController()
+
+                Scaffold(
+                    bottomBar = {
+                        BottomNavBar(
+                            navController = navController,
+                            bottomMenu = BottomNavOptions.bottomNavOptions
+                        )
+                    }
+                ) { paddingValues ->
+                    Surface(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(paddingValues),
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+                        MainNavGraph(navController = navController)
+                    }
                 }
             }
         }
